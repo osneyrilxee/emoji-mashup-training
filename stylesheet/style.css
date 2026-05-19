@@ -1,0 +1,185 @@
+:root {
+    --cursor-color: #000000;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    color: black;
+}
+
+/* HEADER */
+
+header, main {
+    background-color: #acfffb;
+    color: rgb(69, 69, 69);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+}
+
+/* DESCRIPTION */
+
+.description {
+    text-align: center;
+    color: #8fd6d2;
+    font-weight: 600;
+    padding: 10px;
+    font-size: clamp(14px, 1.2vw, 18px);
+}
+
+/* MAIN LAYOUT */
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* BLOCS */
+
+.left-side,
+.right-side {
+    flex: 0 0 auto;
+}
+
+.center-side {
+    flex: 1;
+    text-align: center;
+    font-size: clamp(16px, 2vw, 24px);
+}
+
+.center-side p {
+    display: flex;
+    align-items: center;
+}
+
+/* 🔥 GRID EMOJIS */
+
+.emoji-grid {
+    display: grid;
+
+    /* AUTO RESPONSIVE MAGIC */
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+
+    gap: 10px;
+    background: #e6e6e6;
+    padding: 10px;
+    border-radius: 8px;
+
+    /* taille du bloc */
+    width: clamp(180px, 20vw, 280px);
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+/* EMOJIS TWEMOJI */
+
+img.emoji {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+img.emoji:hover {
+    background-color: rgba(0,0,0,0.1);
+    transform: scale(1.1);
+}
+
+/* RESULT */
+
+.description-text {
+    display: inline-block;
+    border-right: 1px solid var(--cursor-color);
+    overflow: hidden;
+    white-space: nowrap;
+
+    animation:
+        blinking 2s steps(20, end) infinite,
+        typing 7s steps(100, end);
+}
+
+@keyframes blinking {
+    0% { border-color: transparent }
+    50% { border-color: var(--cursor-color); }
+    100% { border-color: transparent }
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 43ch }
+}
+
+#result img.emoji {
+    width: 35px;
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+footer div {
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* 📱 MOBILE */
+
+@media (min-width: 768px) {
+  main {
+    display: flex;
+    justify-content: space-around; /* espace autour des 3 sections */
+    align-items: flex-start;
+    flex-wrap: nowrap; /* éviter le wrap */
+  }
+
+  .center-side {
+    flex: 0 0 auto;      /* taille naturelle */
+    order: 0;            /* ordre normal */
+    margin: 0 20px;      /* un peu d'espace horizontal */
+    text-align: center;  /* texte bien centré */
+    align-self: center;  /* verticalement centré */
+  }
+
+  .left-side,
+  .right-side {
+    flex: 0 0 auto;      /* taille naturelle */
+  }
+}
+
+/* Pour mobile en dessous de 768px */
+@media (max-width: 767px) {
+  main {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .center-side {
+    order: -1; /* centre en premier */
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}

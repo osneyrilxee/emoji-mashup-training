@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emojimashup</title>
+
+    <link rel="stylesheet" href="../stylesheet/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>EmojiMashup</h1>
+    </header>
+
+    <div class="description">
+        <p class="description-text">Choisis deux émojis pour en créer un nouveau style</p>
+    </div>
+
+    <main>
+        <!-- GAUCHE -->
+        <section class="left-side">
+            <div class="emoji-grid">
+                😀 😁 😂 🤣 😃 😄 😅 😆 😉 😊 😋 🫠 😱 😪 😟 😒
+                😍 😘 🥰 😗 🙂 🤗 🤩 🥲 😐 😑 😶 🙄 😥 🙁 😓 😭
+                😬 🤑 🤠 🥳 🥺 🤧 🧐 🤮 😇 👿 🤡 😈 💀 ☠️ 👻 👽
+            </div>
+        </section>
+
+        <!-- CENTRE -->
+        <section class="center-side">
+            <p id="result">Emoji Gauche + Emoji Droite = Nouveau Emoji</p>
+        </section>
+
+        <!-- DROITE -->
+        <section class="right-side">
+            <div class="emoji-grid">
+                😀 😁 😂 🤣 😃 😄 😅 😆 😉 😊 😋 🫠 😱 😪 😟 😒
+                😍 😘 🥰 😗 🙂 🤗 🤩 🥲 😐 😑 😶 🙄 😥 🙁 😓 😭
+                😬 🤑 🤠 🥳 🥺 🤧 🧐 🤮 😎 🥶 😡 🥵 💀 ☠️ 👻 👽
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contact">
+            <ul>
+                <h3>Contact</h3>
+                <li><a href="https://www.instagram.com/malek_darksoul/">Instagram</a></li>
+                <li><a href="https://x.com/Malek_Mareku">Twitter</a></li>
+            </ul>
+        </div>
+
+        <div class="project">
+            <ul>
+                <h3>Projet</h3>
+                <li>EmojiMashup</li>
+                <li>2026 Projet</li>
+            </ul>
+        </div>
+
+        <div class="apropos">
+            <ul>
+                <h3>A propos</h3>
+                <li>Projet fait pour apprendre code</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"></script>
+
+    <script>
+        twemoji.parse(document.body, {
+            folder: 'svg',
+            ext: '.svg',
+            attributes: () => ({ class: 'emoji' }),
+        });
+    </script>
+
+    <script src="../js/scripts.js"></script>
+
+</body>
+</html>
