@@ -105,7 +105,7 @@ document.addEventListener("click", function (e) {
                      alt="Emoji mashup" 
                      class="emoji" />`;
             } else {
-                result.textContent = "Pas de mashup défini pour cette combinaison";
+                result.textContent = "No mashup available for this combination!";
             }
 
             setTimeout(() => {
